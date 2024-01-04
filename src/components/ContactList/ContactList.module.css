@@ -1,0 +1,15 @@
+.contactList {
+  margin: 20px;
+  border: 1px solid #000;
+  border-radius: 5%;
+  background-color: #fff;
+}
+.listItem {
+  display: flex;
+}
+.listItem button {
+  width: auto;
+  height: fit-content;
+  margin: auto 15px;
+  border-radius: 30%;
+}
