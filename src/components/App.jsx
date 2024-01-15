@@ -6,7 +6,7 @@ import { verifyUser } from '../redux/operations';
 import { RestrictedRoute } from '../components/RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { selectIsRefreshing } from '../redux/selectors';
-import css from './App.module.css';
+import { LoaderAnimation } from './LoaderAnimation/LoaderAnimation';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Signup = lazy(() => import('../pages/Signup/Signup'));
@@ -21,9 +21,7 @@ export const App = () => {
   }, [dispach]);
 
   return isRefreshing ? (
-    <p className={css.loader}>
-      <span className={css.loader__anim}></span>Loading data, please wait...
-    </p>
+    <LoaderAnimation />
   ) : (
     <div>
       <Routes>

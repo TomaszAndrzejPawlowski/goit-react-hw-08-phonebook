@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/selectors';
+import { LoaderAnimation } from 'components/LoaderAnimation/LoaderAnimation';
 
 export const SharedLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -11,7 +12,7 @@ export const SharedLayout = () => {
   return (
     <div>
       {isLoggedIn ? <AuthorizedNav /> : <UnauthorizedNav />}
-      <Suspense fallback={<b>Loading ...</b>}>
+      <Suspense fallback={<LoaderAnimation />}>
         <Outlet />
       </Suspense>
     </div>
