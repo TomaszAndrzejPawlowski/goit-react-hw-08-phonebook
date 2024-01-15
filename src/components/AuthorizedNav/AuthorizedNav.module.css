@@ -1,0 +1,22 @@
+.navHome {
+  position: absolute;
+  left: 10px;
+}
+.navHome button {
+  min-height: 50px;
+}
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  border-radius: 8%;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  height: 75px;
+}
+.welcome {
+  margin: 0 30px 0 10px;
+}
+.navigation button {
+  margin-right: 30px;
+}

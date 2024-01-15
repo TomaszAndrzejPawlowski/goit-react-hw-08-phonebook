@@ -1,0 +1,19 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 30px;
+}
+
+.loginFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginForm div {
+  margin-bottom: 10px;
+}
+.loginButton {
+  margin-left: 95px;
+  width: 100px;
+}

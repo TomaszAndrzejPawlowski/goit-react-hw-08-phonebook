@@ -3,6 +3,8 @@ import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/operations';
 import { selectContacts } from '../../redux/selectors';
+import { Button, TextField } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -17,14 +19,14 @@ export const ContactForm = () => {
     if (contacts.find(contact => contact.name === newName)) {
       alert(`${newName} is already in your contact list.`);
     } else if (
-      contacts.filter(contact => contact.phone.includes(newNumber)).length
+      contacts.filter(contact => contact.number.includes(newNumber)).length
     ) {
       alert(`${newName} cannot have the same number as your other contact.`);
     } else if (newName !== '' || newNumber !== '') {
       dispatch(
         addContact({
           name: newName,
-          phone: newNumber,
+          number: newNumber,
         })
       );
       form.reset();
@@ -32,9 +34,10 @@ export const ContactForm = () => {
   };
   return (
     <form className={css.contactForm} onSubmit={handleSubmit}>
-      <label htmlFor={uuidv4()}>Name</label>
-      <input
+      <TextField
+        size="small"
         className={css.contactForm__input}
+        label="Name"
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+([ -'][a-zA-Zа-яА-Я]+)*$"
@@ -42,9 +45,10 @@ export const ContactForm = () => {
         id={uuidv4()}
         required
       />
-      <label htmlFor={uuidv4()}>Number </label>
-      <input
+      <TextField
+        size="small"
         className={css.contactForm__input}
+        label="Number"
         type="tel"
         name="number"
         pattern="^[+]?[0-9 \u0028\u0029\u002D]*$"
@@ -52,8 +56,9 @@ export const ContactForm = () => {
         id={uuidv4()}
         required
       />
-
-      <button type="submit">Add contact</button>
+      <Button variant="outlined" type="submit">
+        <PersonIcon /> Add contact
+      </Button>
     </form>
   );
 };

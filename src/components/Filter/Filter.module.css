@@ -1,11 +1,11 @@
 .filterDiv {
   margin: 0 20px;
+  background-color: #fff;
+  max-width: 200px;
+  border-radius: 10%;
+  overflow: hidden;
 }
 .filterDiv__label {
   display: flex;
   flex-direction: column;
-}
-.filterDiv__input {
-  max-width: 170px;
-  margin-top: 10px;
 }

@@ -1,0 +1,11 @@
+.homeWelcome {
+  width: 500px;
+  border-radius: 20%;
+  margin: 40px auto 0;
+  padding: 5%;
+  background-image: linear-gradient(
+    to top left,
+    rgb(54, 163, 252),
+    rgb(127, 251, 255)
+  );
+}
